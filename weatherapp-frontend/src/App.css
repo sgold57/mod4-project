@@ -1,3 +1,50 @@
 body{
-  background-color: turquoise;
+  background-image: url("https://img3.goodfon.com/wallpaper/nbig/3/53/8bit-vremya-sutki-utro-solnce.jpg");
+}
+
+@font-face {
+  font-family: EndlessBossBattleRegular;
+  src: url("./Fonts/EndlessBossBattleRegular-v7Ey.ttf") format("truetype")
+}
+
+header{
+  display: flex;
+  justify-content: center;
+}
+
+#h1-title{
+  text-align: center;
+  font-size: 64px;
+  font-family: EndlessBossBattleRegular;
+  color:rebeccapurple;
+  border: 2.3px dashed black;
+  padding: 14px 8px 4px 12px;
+  margin-top: 15px
+}
+
+.zip-code-div{
+  display: flex;
+  justify-content: center;
+}
+
+.zip-code-form > *{
+  border-color:rgb(91, 147, 247);
+  outline: none;
+}
+
+#zip-code-button{
+  background-color: rgb(91, 147, 247);
+  color: rebeccapurple;
+  border-color:rgb(91, 147, 247);
+  border: 0.1px 2px 0px 2px;
+  border-radius: 0.4px;
+}
+
+#zip-code-button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#zip-code-button:active{
+  background-color: rgb(91, 147, 247);
+  border-color:rgb(91, 147, 247);
 }
