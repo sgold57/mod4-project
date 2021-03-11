@@ -8,7 +8,6 @@ export default class ZipCodeInput extends Component {
 
   handleChange = (event) => {
     let {name, value} = event.target
-    value = value
     this.setState({
       [name]: value
     })
@@ -24,14 +23,14 @@ export default class ZipCodeInput extends Component {
     return(
       <div className="zip-code-div">
         <form className="zip-code-form" onSubmit={this.handleSubmit} >
-          <input  
+          <input 
             type="text" 
             name="zipCode" 
             value={zipCode} 
             placeholder="Enter Your Zip Code" 
             onChange={this.handleChange} 
           />
-          <input type="submit" value="Get Weather" />
+          <button id="zip-code-button" type="submit"><strong>Get Weather</strong></button>
         </form>
       </div>
     )

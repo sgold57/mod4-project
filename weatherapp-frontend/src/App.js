@@ -12,15 +12,15 @@ export default class App extends Component {
     currentWeather: ""
   }
 
-  
-  
   render(){
     return (
       <div className="App">
-        <h1>Sam's Mod 4 Weather Application</h1>
+        <header>
+          <h1 id="h1-title">Not Your iPhone's Weather App</h1>
+        </header>
         <ZipCodeInput zipCode={this.state.zipCode} />
       </div>
     );
-    }
+  }
 }
 
