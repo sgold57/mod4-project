@@ -1,11 +1,26 @@
+import React, { Component } from 'react'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+import ZipCodeInput from './Components/ZipCodeInput'
 
-    </div>
-  );
+
+export default class App extends Component {
+  
+  state = {
+    zipCode: "",
+    currentWeather: ""
+  }
+
+  
+  
+  render(){
+    return (
+      <div className="App">
+        <h1>Sam's Mod 4 Weather Application</h1>
+        <ZipCodeInput zipCode={this.state.zipCode} />
+      </div>
+    );
+    }
 }
 
-export default App;
