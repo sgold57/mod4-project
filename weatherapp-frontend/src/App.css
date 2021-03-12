@@ -25,6 +25,7 @@ header{
 .zip-code-div{
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .zip-code-form > *{
@@ -47,4 +48,12 @@ header{
 #zip-code-button:active{
   background-color: rgb(91, 147, 247);
   border-color:rgb(91, 147, 247);
+}
+
+.current-weather-container{
+  display: flex;
+  padding: 10px;
+  border: 1px solid black;
+  height: 175px;
+
 }
