@@ -10,7 +10,8 @@ export default class App extends Component {
 
   state = {
     currentWeather: [],
-    zipCode: ""
+    zipCode: "",
+    inputReceived: false
   }
 
   handleChange = (event) => {
@@ -31,7 +32,13 @@ export default class App extends Component {
     const samsApiKey = "8145ea9b599047fdad9673591acea3cd"
     fetch(`https://api.weatherbit.io/v2.0/current?postal_code=${fetchZipCode}&key=${samsApiKey}`)
       .then(response => response.json())
-      .then(currentWeather => this.setState({ currentWeather : currentWeather.data[0]}))
+      .then(currentWeather => {
+        this.setState({ 
+          currentWeather : currentWeather.data[0],
+          inputReceived: true
+        })
+      }
+    )
   }
 
   // getWeather = (returnedZipCode) => {
@@ -69,8 +76,11 @@ export default class App extends Component {
             <button id="zip-code-button" type="submit"><strong>Get Weather</strong></button>
           </form>
         </div>      
-        <CurrentWeatherContainer currentWeather={this.state.currentWeather} />
-      </div>
+        { this.state.inputReceived 
+          ? <CurrentWeatherContainer currentWeather={this.state.currentWeather} />
+          : null
+        }
+        </div>
     )
   }
 }

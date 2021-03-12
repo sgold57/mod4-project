@@ -6,11 +6,11 @@ export default class CurrentWeatherContainer extends Component {
   
 
   render(){
-    let weatherIcon = `./Icons/${this.props.weather.icon}`
     const {weather, city_name, state_code, temp} = this.props.currentWeather
+    console.log(weather)
     return(
       <div className="current-weather-container">
-        <CurrentWeatherCard city_name={city_name} state_code={state_code} temp={temp} weather={weather} weatherIcon={weatherIcon} />
+        <CurrentWeatherCard city_name={city_name} state_code={state_code} temp={temp} weather={weather} />
       </div>
     )
   }
