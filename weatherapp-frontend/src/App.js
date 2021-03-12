@@ -4,14 +4,17 @@ import './App.css';
 
 // import ZipCodeInput from './Components/ZipCodeInput'
 import CurrentWeatherContainer from './Containers/CurrentWeatherContainer'
+import ThreeDayWeatherContainer from './Containers/ThreeDayWeatherContainer'
 
 
 export default class App extends Component {
 
   state = {
     currentWeather: [],
+    threeDayWeather: [],
     zipCode: "",
-    inputReceived: false
+    inputReceived: false,
+    threeDayInputReceived: false
   }
 
   handleChange = (event) => {
@@ -25,7 +28,7 @@ export default class App extends Component {
     event.preventDefault()
     event.target.style.display="none"
     this.getWeather(this.state.zipCode)
-    // console.log(this.state.zipCode)
+    this.getThreeDayWeather(this.state.zipCode)
   }
 
   getWeather = (fetchZipCode) => {
@@ -41,19 +44,19 @@ export default class App extends Component {
     )
   }
 
-  // getWeather = (returnedZipCode) => {
-  //   this.setState({
-  //     zipCode: returnedZipCode
-  //   })
-  //   console.log(this.state.zipCode)
-    // const apiKey = "8145ea9b599047fdad9673591acea3cd"
-    // const desiredZipCode = this.state.zipCode
-    // console.log(apiKey)
-    // console.log(desiredZipCode)
-    // fetch(`https://api.weatherbit.io/v2.0/current?postal_code=${desiredZipCode}&key=${apiKey}`)
-    //   .then(response => response.json())
-    //   .then(results => console.log(results)) 
-  // }
+  getThreeDayWeather = (fetchZipCode) => { 
+    const samsApiKey = "8145ea9b599047fdad9673591acea3cd"
+    fetch(`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fetchZipCode}&key=${samsApiKey}&days=4`)
+      .then(response => response.json())
+      .then(forecast => {
+        this.setState({ 
+          threeDayWeather: forecast.data.slice(1),
+          threeDayInputReceived: true
+        })
+      }
+    )
+  }
+
 
 
 
@@ -78,6 +81,11 @@ export default class App extends Component {
         </div>      
         { this.state.inputReceived 
           ? <CurrentWeatherContainer currentWeather={this.state.currentWeather} />
+          : null
+        }
+        {
+          this.state.threeDayInputReceived
+          ? <ThreeDayWeatherContainer threeDayWeather={this.state.threeDayWeather} />
           : null
         }
         </div>
