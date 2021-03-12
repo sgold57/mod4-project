@@ -26,4 +26,5 @@ Learning React has been fun and challenging. I had a realization later on the pr
 - All weather Icons courtesy of Weatherbit.io
 - Font type EndlessBossBattle made by Checquered Ink (https://www.fontspace.com/endless-boss-battle-font-f24086)
  
-
+# Contact
+Program made by [Sam Gold](https://github.com/sgold57). Please contact if you have any questions or concerns.
