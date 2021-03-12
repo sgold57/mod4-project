@@ -53,15 +53,17 @@ header{
 .current-weather-container{
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding-left: 275px;
+  padding-right: 200px;
   justify-content: center;
   height: 175px;
   font-family: EndlessBossBattleRegular;
   color: rgb(206, 197, 78);
 }
 
+
 .weather-card{
-  width: 500px;
+  width: 550px;
   border: 1px dashed midnightblue;
   text-align: center;
 }
@@ -70,12 +72,12 @@ header{
 .current-location-p{
   font-size: 28px;
   margin: 5px;
-  padding: 3px 0px 3px 0px
+  padding: 5px 0px 3px 0px
   
 }
 
 .temp-p{
-  font-size: 36px;
+  font-size: 44px;
   margin: 1px
 }
 
@@ -87,5 +89,5 @@ header{
 
 .weather-p{
   margin: 2px;
-  font-size: 28px;
+  font-size: 32px;
 }
