@@ -1,16 +1,8 @@
-import React, { Component } from 'react'
-
-export default class CurrentWeatherCard extends Component{
-
-  componentDidMount(){
-    console.log("wow!")
+export default function CurrentWeatherCard(props){
+  
+  return(
+    <div>
+      <img src={props.weatherIcon} />
+    </div>
+  )
   }
-
-  render(){
-    console.log(this.props)
-      <div></div>
-    )
-  }
-
-
-}

@@ -1,16 +1,27 @@
 import React, { Component } from 'react'
 
+import CurrentWeatherCard from '../Components/CurrentWeatherCard'
 export default class CurrentWeatherContainer extends Component {
   
-  componentDidMount(){
-    console.log(this.props)
-  }
   
 
   render(){
+    let weatherIcon = `./Icons/${this.props.weather.icon}`
+    const {weather, city_name, state_code, temp} = this.props.currentWeather
     return(
-      <section className="current-weather-container">
-      </section>
+      <div className="current-weather-container">
+        <CurrentWeatherCard city_name={city_name} state_code={state_code} temp={temp} weather={weather} weatherIcon={weatherIcon} />
+      </div>
     )
   }
 }
+
+
+  // letsSetState = (weatherArray) => {
+  //   const tempFahrenheit = this.convertTemp(weatherArray.temp)
+  //   this.setState({
+  //     currentWeather: weatherArray.weather.description,
+  //     cityName: weatherArray.city_name + `, ${weatherArray.state_code}`,
+  //     currentTemp: tempFahrenheit
+  //   })
+  // }
